@@ -1,0 +1,19 @@
+
+### how this project was built - step by srep
+
+rails new zips
+# if fails : gem install nokogiri -v '1.8.5' --source 'https://rubygems.org/'
+cd zips
+git init
+git add .
+git commit -m "initial commit"
+add gems to gemfile
+bundle
+
+# generate config/mongoid.yml
+rails g mongoid:config 
+### todo: application.rb is empty ( maybe miss something )
+
+# create dev db
+mongoimport --db zips_development --collection zips --file zips.json
+
