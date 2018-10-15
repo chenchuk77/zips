@@ -17,3 +17,20 @@ rails g mongoid:config
 # create dev db
 mongoimport --db zips_development --collection zips --file zips.json
 
+# start server in new terminal
+rails s
+
+# start irb
+rails c
+irb(main):015:0> Mongoid.load!("config/mongoid.yml")    # workaround
+irb(main):033:0> Mongo::Logger.logger.level = ::Logger::INFO
+irb(main):016:0> client = Mongoid::Clients.default
+irb(main):029:0> #client.class
+irb(main):029:0> #client.methods.map { |f| puts f }; nil 
+irb(main):032:0> client.database.name
+irb(main):033:0> collection = client[:zips]
+
+
+
+
+
