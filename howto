@@ -30,7 +30,9 @@ irb(main):029:0> #client.methods.map { |f| puts f }; nil
 irb(main):032:0> client.database.name
 irb(main):033:0> collection = client[:zips]
 
-
+# create DAO (dao + entity) ???
+# ORM consistent with ActiveModel framework
+Models/zip.rb
 
 
 
