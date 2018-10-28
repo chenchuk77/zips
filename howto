@@ -21,7 +21,7 @@ mongoimport --db zips_development --collection zips --file zips.json
 rails s
 
 # start irb
-rails c
+rails c -- --simple-prompt
 irb(main):015:0> Mongoid.load!("config/mongoid.yml")    # workaround
 irb(main):033:0> Mongo::Logger.logger.level = ::Logger::INFO
 irb(main):016:0> client = Mongoid::Clients.default
@@ -29,6 +29,9 @@ irb(main):029:0> #client.class
 irb(main):029:0> #client.methods.map { |f| puts f }; nil 
 irb(main):032:0> client.database.name
 irb(main):033:0> collection = client[:zips]
+
+irb > reload!  ### use to reload files withot restarting irb
+
 
 # create DAO (dao + entity) ???
 # ORM consistent with ActiveModel framework
